@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+<b>
+<br>
+<pre>Object = {
+            4: 'abc',
+            10: 'ab2',
+            5: 'abc3',
+            6: 'abc5'
+                    }
+  </pre>
+  </b>
+    <button onclick="Run()">
+    Click Here
+    </button>
+      
+    <p id="b1"></p>
+      
+    <script>
+        var el_down = document.getElementById("b1");
+          
+        var abc_Object = {
+            4: 'abc',
+            10: 'ab2',
+            5: 'abc3',
+            6: 'abc5'
+        };
+  
+        function sortKeys(obj_1) {
+            var key = Object.keys(obj_1)
+            .sort(function order(key1, key2) {
+                if (key1 < key2) return -1;
+                else if (key1 > key2) return +1;
+                else return 0;
+            }); 
+              
+            var temp = {};
+              
+            for (var i = 0; i < key.length; i++) {
+                temp[key[i]] = obj_1[key[i]];
+                delete obj_1[key[i]];
+            } 
+
+            for (var i = 0; i < key.length; i++) {
+                obj_1[key[i]] = temp[key[i]];
+            } 
+            return obj_1;
+        }  
+        function Run() {
+            el_down.innerHTML = JSON
+            .stringify(sortKeys(abc_Object));
+        }
+    </script>
+</body>
+  </html>

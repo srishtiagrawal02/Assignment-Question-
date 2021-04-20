@@ -1,0 +1,43 @@
+<!DOCTYPE HTML> 
+<html> 
+    <head> 
+        <title> 
+            How to create a link in JavaScript ?
+        </title>
+    </head> 
+      
+    <body style = "text-align:center;">
+          
+        <h1 style = "color:green;" > 
+            Rest api link
+        </h1>
+          
+        <p id = "A_UP" style =
+            "font-size: 19px; font-weight: bold;">
+        </p>
+          
+        <button onclick = "S_Fun()">
+            click here
+        </button>
+          
+        <p id = "B_DOWN" style =
+            "color: green; font-size: 24px; font-weight: bold;">
+        </p>
+          
+        <script>
+            var el_up = document.getElementById("A_UP");
+            var el_down = document.getElementById("B_DOWN");
+              
+            el_up.innerHTML = "Click below.";
+              
+            function S_Fun() {
+                  var a = document.createElement('a'); 
+                  var link = document.createTextNode("This is link");
+                  a.appendChild(link); 
+                 a.title = "This is Link"; 
+                 a.href = "http://www.example.com/api/get/1"; 
+                 document.body.appendChild(a); 
+            }
+        </script> 
+    </body> 
+</html>
